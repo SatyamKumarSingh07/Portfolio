@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    /* overflow: hidden; */
+}
+
+body {
+    background: hsl(219, 18%, 15%);
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: -22px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 23px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #10d2ec;
+}
+
+.navbar {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 17px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: .3s;
+    animation: slide-top .5s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes slide-top {
+    0% {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-section {
+    /* Adjusted to a column layout */
+    padding: 20px;
+    .project{
+     /* Center-align the project */
+    margin-bottom: 30px; /* Add margin between projects */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px; /* Center-align content horizontally */
+    opacity: 0;
+    animation: slide-right 1s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+
+    }
+}
+.project-details span{
+    color: rgb(85, 196, 240);
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+
+}
+.project img {
+    width: 100%;
+    max-width: 400px;
+    height: 200px; /* Ensure aspect ratio is maintained */
+    border-radius: 10px;
+    margin: 0 20px; /* Add margin between text and image */
+}
+
+.project h2 {
+   
+    color: #10d2ec;
+    font-size: 17px;
+}
+@keyframes slide-right{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.project-details a{
+    color:rgb(250, 149, 8);
+    font-style: italic;
+}
+.project-section img{
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 1s, 1s;
+}
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes zoomIn{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
